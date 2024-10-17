@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: auto;
+            max-width: 500px;
+            margin: 150px auto;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            
+        }
+
+        .child {
+            padding: 10px 80px;
+        }
+
+        .h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        .id {
+            display: block;
+            justify-content: center;
+            height: 20px;
+            width: 200px;
+            border: 1px solid gray;
+        }
+
+        .child2 {
+            padding: 10px 20px;
+            margin: 5px;
+
+        }
+
+        .btn {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: aqua;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #1d3557;
+            color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                height: auto;
+                max-width: 380px;
+            
+            }
+
+            .btn {
+                margin: 10px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="child">
+            <h1 class="h1" >I love javascript</h1>
+            <input class="id" type="text" placeholder="Enter the text here......."  id="input">
+            <br/>
+            <input class="id" type="text" placeholder="Ans" id="output">
+        
+        </div>
+
+        <div class="child2">
+
+            <button class="btn" id="btn1" onclick="upperwordc()">uppercase</button>
+            <button class="btn" id="btn1" onclick="lowerwordc()">lowercase</button>
+            <button class="btn" id="btn1" onclick="wordcount()">wordcount</button>
+            <button class="btn" id="btn1" onclick="charcount()">count</button>
+
+        </div>
+
+    </div>
+
+   <script>
+    const inputele=document.getElementById('input');
+    const outputele=document.getElementById('output');
+
+    function upperwordc()
+    {
+        outputele.value=inputele.value.toUpperCase();
+    }
+
+    function lowerwordc()
+    {
+        const inputtext=inputele.value;
+        outputele.value=inputtext.toLowerCase();
+    }
+
+    function charcount()
+    {
+        outputele.value="Char count: "+inputele.value.length;
+
+        
+    }
+
+    function wordcount()
+    {
+        inputval=inputele.value.split(" ").length;
+        outputele.value="word count: "+inputval;
+    }
+
+   </script>
+</body>
+</html>
